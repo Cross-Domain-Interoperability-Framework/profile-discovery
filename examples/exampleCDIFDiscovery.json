@@ -1,0 +1,611 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "geosparql": "http://www.opengis.net/ont/geosparql#",
+    "spdx": "http://spdx.org/rdf/terms#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "ex": "https://example.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "uri": "urn:",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "ex:YOPx123",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Test dataset",
+  "schema:description": "Auto generated from JSON schema, values are gobbledegoop. For testing",
+  "schema:additionalType": [
+    "test data description"
+  ],
+  "schema:identifier": {
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "uSNzhqeEQPKhCj",
+    "schema:url": "http://identifiers.org/sandbox/uSNzhqeEQPKhCj"
+  },
+  "schema:sameAs": [
+    "urn:idorg:test:p45689",
+    "https://example.org/alt-id/YOPx123"
+  ],
+  "schema:version": "OVVAYgJhmFkXyVyedlVo",
+  "schema:url": "http://example.com/resource?foo=bar#fragment",
+  "schema:inLanguage": "bYiJT",
+  "schema:dateModified": "2020-10-15",
+  "schema:datePublished": "2021-09-05",
+  "schema:conditionsOfAccess": [
+    "ihYojbwJyw",
+    "jNv",
+    "LCY",
+    "tfmbDGeiuEnuhfKBvk"
+  ],
+  "schema:license": [
+    "dXhuFoqL",
+    "Kmp"
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "lfCzUaoftdtTPAhMnpC",
+      "target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:encodingFormat": "gompgHAN",
+        "schema:name": "oAuxEutsTEiB",
+        "schema:url": "http://example.com/resource?foo=bar#fragment"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "BOoRREnpDEUrdNaV",
+      "target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:encodingFormat": "FNoslhw",
+        "schema:name": "atsDYJxuhHpivqLmw",
+        "schema:url": "http://example.com/resource?foo=bar#fragment"
+      }
+    }
+  ],
+  "schema:publishingPrinciples": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Data retention and update policy",
+      "schema:url": "https://example.org/policies/data-retention"
+    }
+  ],
+  "schema:keywords": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "MiSqvcp",
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "ex:rIPXjaCPQX",
+        "schema:value": "PVSajGtBPsLzeCTLv",
+        "schema:url": "http://example.com/resource/PVSajGtBPsLzeCTLvt"
+      },
+      "schema:inDefinedTermSet": "EfagQEQtAkwMBDvfKznc",
+      "schema:termCode": "bzOl"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "TiMuawt",
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "https://resource.org/identifier",
+        "schema:value": "tdUMYBItIwdJe",
+        "schema:url": "http://example.com/resource/tdUMYBItIwdJe"
+      },
+      "schema:inDefinedTermSet": "sqH",
+      "schema:termCode": "RUUxHY"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@id": "ex:mxxInaV",
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "AEbcNvM",
+        "schema:alternateName": "MwsoNGVEp",
+        "schema:affiliation": {
+          "@id": "ex:xblzSwEYJKBPpkK",
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:additionalType": [
+            "schema:GovernmentOrganization",
+            "schema:ResearchOrganization",
+            "schema:ResearchOrganization",
+            "schema:Project"
+          ],
+          "schema:name": "mDjEBamofgiqGBqfQGfe",
+          "schema:alternateName": "TrAuXgjTOCmJVTaf",
+          "schema:description": "wwcOQoCbUe",
+          "schema:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "oyvigoDvYFCGEkFc",
+            "schema:value": "tMxtQyCUFptzpXj",
+            "schema:url": "http://example.com/resource?foo=bar#fragment"
+          },
+          "schema:sameAs": [
+            "K",
+            "AsoXEfDoLipcJw"
+          ]
+        },
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "tready@email.ocm"
+        },
+        "schema:description": "ypZ",
+        "schema:identifier": {
+          "@type": [
+            "schema:PropertyValue"
+          ],
+          "schema:propertyID": "ciZyuOzfhVSPdWi",
+          "schema:value": "JqLmJhoyFPhsmW",
+          "schema:url": "http://example.com/resource?foo=bar#fragment"
+        },
+        "schema:sameAs": [
+          "ex:pMPylNhiMvfC",
+          "ex:IgH"
+        ]
+      },
+      {
+        "@id": "ex:jP",
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Doe, Jane",
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "jdoe@example.org"
+        }
+      }
+    ]
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "editor",
+      "schema:contributor": {
+        "@id": "ex:PersonExample_zZc_asContributor",
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Joe B. Test",
+        "schema:alternateName": "Test, J. B.",
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "The Big Manufacturing Co."
+        },
+        "schema:description": "Metadata specialist, based in Portland, Maine",
+        "schema:identifier": {
+          "@type": [
+            "schema:PropertyValue"
+          ],
+          "schema:propertyID": "https://orcid.org",
+          "schema:value": "iY",
+          "schema:url": "https://orcid.org/iY"
+        },
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "joe@bmanuco.org"
+        },
+        "schema:sameAs": [
+          "https://ark.org/46737",
+          "uri:test:43737"
+        ]
+      }
+    },
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "data steward",
+      "schema:contributor": {
+        "@id": "ex:NyMWPlRtQizAFE"
+      }
+    }
+  ],
+  "schema:publisher": {
+    "@id": "ex:exampleOrg_fW",
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:additionalType": [
+      "schema:ResearchOrganization",
+      "university"
+    ],
+    "schema:name": "University of Arizona",
+    "schema:alternateName": "UAz",
+    "schema:description": "University in Tucson, Arizona",
+    "schema:identifier": {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:propertyID": "https://registry.identifiers.org/registry/ror",
+      "schema:value": "03m2x1q45",
+      "schema:url": "https://ror.org/03m2x1q45"
+    },
+    "schema:sameAs": [
+      "Wildcats"
+    ]
+  },
+  "schema:provider": [
+    {
+      "@id": "ex:gDiAxjl",
+      "@type": [
+        "schema:Organization"
+      ],
+      "schema:name": "Example Data Center"
+    },
+    {
+      "@id": "ex:ihjJtFPNEKnGSFBcgS",
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Smith, Robert",
+      "schema:contactPoint": {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:email": "rsmith@example.org"
+      }
+    },
+    {
+      "@id": "https://ada.org/person/5489",
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:contactPoint": {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:email": "a.king@nhm.ac.uk"
+      },
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "https://orcid.org",
+        "schema:value": "0000-0001-6113-5417",
+        "schema:url": "https://orcid.org/0000-0001-6113-5417"
+      },
+      "schema:name": "King, Ashley"
+    }
+  ],
+  "schema:funding": [
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "grant-id",
+        "schema:value": "lieopgXuumP"
+      },
+      "schema:name": "fhhbzh",
+      "schema:funder": {
+        "@id": "https://ror.org/3572wjht"
+      }
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "grant-id",
+        "schema:value": "fMuiBjneudpV"
+      },
+      "schema:name": "MWoPQAqRYHobey",
+      "schema:funder": {
+        "@id": "https://ror.org/fnjrj68"
+      }
+    },
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "grant-id",
+        "schema:value": "LZpo"
+      },
+      "schema:name": "ekckpBtI",
+      "schema:funder": {
+        "@id": "https://ror.org/sejer4w6u8"
+      }
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "VwuIdrCrJSsrGATePg",
+      "schema:contentUrl": "http://example.com/resource?foo=bar#fragment",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "spdx:checksum": {
+        "@type": [
+          "spdx:Checksum"
+        ],
+        "spdx:algorithm": "MD5",
+        "spdx:checksumValue": "MITGLcmBjeFYWmjP"
+      },
+      "schema:provider": [
+        {
+          "@id": "ex:ABYcNWHKYhTiLLNEzJx",
+          "@type": [
+            "schema:Person"
+          ],
+          "schema:name": "Walker, Longin",
+          "schema:alternateName": "LWH",
+          "schema:affiliation": {
+            "@id": "ex:corzCgjNrGcH",
+            "@type": [
+              "schema:Organization"
+            ],
+            "schema:additionalType": [
+              "schema:NGO"
+            ],
+            "schema:name": "Some Data Repository",
+            "schema:alternateName": "leJqYoxQIH",
+            "schema:description": "vRzzUAmtNWLgZcgNIC",
+            "schema:identifier": {
+              "@type": [
+                "schema:PropertyValue"
+              ],
+              "schema:propertyID": "KSgJJfyAuQPEX",
+              "schema:value": "iFSyBdjVAxHmFOZVFg"
+            },
+            "schema:sameAs": [
+              "ex:ITXGFU",
+              "urn:test:WWcBivQCAO"
+            ]
+          },
+          "schema:contactPoint": {
+            "@type": [
+              "schema:ContactPoint"
+            ],
+            "schema:email": "tom@ngo.net"
+          },
+          "schema:description": "Data Curator",
+          "schema:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "https://identifiers.org/orcid",
+            "schema:value": "NfaMinUfHeMDEFNc",
+            "schema:url": "http://orcid.org/NfaMinUfHeMDEFNc"
+          }
+        }
+      ],
+      "dcterms:conformsTo": [
+        {
+          "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "MVMpmnCGAggEnsoEgJXH",
+      "schema:contentUrl": "http://example.com/resource?foo=bar#fragment",
+      "schema:encodingFormat": [
+        "tNdpXaJgDeWbFkNM",
+        "kpZDvhyVo",
+        "sMUGwSqxWzJOYEb"
+      ],
+      "spdx:checksum": {
+        "@type": [
+          "spdx:Checksum"
+        ],
+        "spdx:algorithm": "j",
+        "spdx:checksumValue": "h"
+      },
+      "schema:provider": [
+        {
+          "@id": "kNKPZsCSWMc",
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "SdeMvoPFxEaJOvQy",
+          "schema:alternateName": "WFcslOjvGZY",
+          "schema:description": "ztcLdOAkQTKSPLZ",
+          "schema:identifier": {
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "ex:oFIYAymjuGCPjDnSgmB",
+            "schema:url": "http://example.com/resource/WPfhCJyxiDcwgdHMemJd"
+          }
+        },
+        {
+          "@id": "ex:sr68lgy",
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Another Provider Org"
+        }
+      ],
+      "dcterms:conformsTo": [
+        {
+          "@id": "http://www.opengis.net/def/nil/OGC/0/missing"
+        }
+      ]
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "@id": "ex:KJTFKurNFu",
+      "schema:name": "RbMivCtraTmzms",
+      "schema:description": "EcbPmKQnMCgWozw",
+      "schema:propertyID": [
+        "urn:test:GigjbPysIJ",
+        "https://ark.org/bXEOCTwvICRc"
+      ],
+      "schema:measurementTechnique": "some measurement technique",
+      "schema:unitText": "furlongs",
+      "schema:unitCode": "F",
+      "schema:minValue": 67.0,
+      "schema:maxValue": 98.0,
+      "schema:url": "http://example.com/resource?foo=bar#furlong"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "@id": "ex:OjHgIDO",
+      "schema:name": "jzgZCegiTFYBSmsSh",
+      "schema:description": "RGKBMBkScTTNQ",
+      "schema:propertyID": [
+        "urn:properties:tzysaGTv",
+        "ex:CUXfWZLdRkEAG"
+      ],
+      "schema:measurementTechnique": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "a good technique",
+        "schema:identifier": {
+          "@type": [
+            "schema:PropertyValue"
+          ],
+          "schema:propertyID": "https://identifiers.org",
+          "schema:value": "igcJkZMJiKehgkPjMCp",
+          "schema:url": "https://identifiers.org/technique/igcJkZMJiKehgkPjMCp"
+        },
+        "schema:inDefinedTermSet": "https://identifiers.org/technique/vocabulary",
+        "schema:termCode": "agt"
+      },
+      "schema:unitText": "stone",
+      "schema:unitCode": "S",
+      "schema:minValue": 36.0,
+      "schema:maxValue": 74.0,
+      "schema:url": "http://example.com/resource?foo=bar#stone"
+    }
+  ],
+  "schema:subjectOf": {
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "@id": "ex:BAaR",
+    "schema:about": {
+      "@id": "ex:YOPx"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/profiles/cdifCompositeProfile/CoreDiscovery"
+      },
+      {
+        "@id": "https://w3id.org/cdif/core/1.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0"
+      }
+    ],
+    "schema:maintainer": {
+      "@id": "ex:PersonExample_zZc",
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Joe Test",
+      "schema:alternateName": "Test, Joe",
+      "schema:affiliation": {
+        "@id": "ex:maintainerAffiliation_3456",
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Test organization"
+      },
+      "schema:description": "Metadata specialist, based in Portland, Maine",
+      "schema:identifier": {
+        "@id": "ex:maintainerIdentifier_3456",
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "https://doi.org",
+        "schema:value": "iY",
+        "schema:url": "https://doi.org/iY"
+      },
+      "schema:contactPoint": {
+        "@id": "ex:maintainerContactPoint_3456",
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:email": "joe@bmanuco.org"
+      },
+      "schema:sameAs": [
+        "https://ark.org/46737",
+        "uri:test:43737"
+      ]
+    },
+    "schema:sdDatePublished": "2025-10-25",
+    "schema:includedInDataCatalog": {
+      "@id": "ex:lIZkH",
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "naEEWHEjgvNFJy",
+      "schema:url": "http://example.com/resource?foo=bar#fragment",
+      "schema:identifier": {
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "ex:fGSg",
+        "schema:value": "vPADlYJkJuGgI",
+        "schema:url": "http://example.com/resource?foo=bar#fragment"
+      }
+    }
+  }
+}

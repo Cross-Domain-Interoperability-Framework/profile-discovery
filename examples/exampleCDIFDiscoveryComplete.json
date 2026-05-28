@@ -1,0 +1,609 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "ex": "https://example.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "spdx": "http://spdx.org/rdf/terms#",
+    "dqv": "http://www.w3.org/ns/dqv#",
+    "geosparql": "http://www.opengis.net/ont/geosparql#",
+    "sf": "http://www.opengis.net/ont/sf#",
+    "time": "http://www.w3.org/2006/time#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/"
+  },
+  "@id": "ex:completeDiscoveryDataset42",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "North Atlantic Deep Water Formation Observations 2015-2024",
+  "schema:description": "Hydrographic observations from repeat transects across the Labrador Sea measuring temperature, salinity, and dissolved oxygen profiles to 4000m depth. Data collected from annual winter cruises documenting deep water formation processes.",
+  "schema:identifier": {
+    "@id": "ex:datasetDOI42",
+    "@type": [
+      "schema:PropertyValue"
+    ],
+    "schema:propertyID": "https://registry.identifiers.org/registry/doi",
+    "schema:value": "10.5281/zenodo.42042042",
+    "schema:url": "https://doi.org/10.5281/zenodo.42042042"
+  },
+  "schema:additionalType": [
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Observational Data",
+      "schema:identifier": "https://gcmd.earthdata.nasa.gov/kms/concept/THERMOHALINE_CIRCULATION",
+      "schema:inDefinedTermSet": "https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords",
+      "schema:termCode": "EARTH SCIENCE > OCEANS > OCEAN CIRCULATION > THERMOHALINE CIRCULATION"
+    }
+  ],
+  "schema:sameAs": [
+    "https://doi.org/10.5281/zenodo.42042042",
+    {
+      "@id": "https://n2t.net/ark:/99999/fk4nadw2024"
+    }
+  ],
+  "schema:version": "2.1",
+  "schema:inLanguage": "en",
+  "schema:dateModified": "2025-03-10",
+  "schema:datePublished": "2024-09-01",
+  "schema:url": "https://example.org/datasets/nadw-observations",
+  "schema:measurementTechnique": [
+    "CTD rosette casts to 4000m with 1m vertical resolution",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "CTD profiling",
+      "schema:identifier": "https://vocab.nerc.ac.uk/collection/L05/current/130/",
+      "schema:inDefinedTermSet": "https://vocab.nerc.ac.uk/collection/L05/current/",
+      "schema:termCode": "L05:130"
+    }
+  ],
+  "schema:conditionsOfAccess": [
+    "Freely available after 12-month embargo from collection date",
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "NADW Program Data Policy",
+      "schema:description": "Embargo and citation requirements for deep water formation data",
+      "schema:url": "https://example.org/policies/nadw-data-access"
+    }
+  ],
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Creative Commons Attribution 4.0",
+      "schema:url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "schema:keywords": [
+    "deep water formation",
+    "Labrador Sea",
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "North Atlantic Deep Water",
+      "schema:identifier": "https://vocab.nerc.ac.uk/collection/P02/current/DOXY/",
+      "schema:inDefinedTermSet": "https://vocab.nerc.ac.uk/collection/P02/current/",
+      "schema:termCode": "P02:DOXY"
+    },
+    {
+      "@type": [
+        "schema:DefinedTerm"
+      ],
+      "schema:name": "Sea water temperature",
+      "schema:identifier": "https://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/",
+      "schema:inDefinedTermSet": "https://vocab.nerc.ac.uk/collection/P01/current/",
+      "schema:termCode": "TEMPPR01"
+    }
+  ],
+  "schema:creator": {
+    "@list": [
+      {
+        "@id": "https://orcid.org/0000-0001-5555-6666",
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Yashayaev, Igor",
+        "schema:alternateName": "I. Yashayaev",
+        "schema:description": "Physical oceanographer specializing in Labrador Sea deep convection",
+        "schema:identifier": {
+          "@id": "ex:yashayaevOrcid",
+          "@type": [
+            "schema:PropertyValue"
+          ],
+          "schema:propertyID": "https://registry.identifiers.org/registry/orcid",
+          "schema:value": "0000-0001-5555-6666",
+          "schema:url": "https://orcid.org/0000-0001-5555-6666"
+        },
+        "schema:sameAs": [
+          "https://orcid.org/0000-0001-5555-6666"
+        ],
+        "schema:affiliation": {
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Bedford Institute of Oceanography",
+          "schema:identifier": {
+            "@id": "ex:bioRor",
+            "@type": [
+              "schema:PropertyValue"
+            ],
+            "schema:propertyID": "https://registry.identifiers.org/registry/ror",
+            "schema:value": "03fxm9z60",
+            "schema:url": "https://ror.org/03fxm9z60"
+          },
+          "schema:additionalType": [
+            {
+              "@type": [
+                "schema:DefinedTerm"
+              ],
+              "schema:name": "Government Research Laboratory",
+              "schema:identifier": "https://example.org/org-types/GRL",
+              "schema:inDefinedTermSet": "https://example.org/org-types",
+              "schema:termCode": "GRL"
+            }
+          ],
+          "schema:url": "https://www.bio.gc.ca",
+          "schema:sameAs": [
+            "https://ror.org/03fxm9z60"
+          ],
+          "schema:contactPoint": {
+            "@type": [
+              "schema:ContactPoint"
+            ],
+            "schema:email": "science@bio.gc.ca"
+          }
+        },
+        "schema:contactPoint": {
+          "@type": [
+            "schema:ContactPoint"
+          ],
+          "schema:email": "igor.yashayaev@bio.gc.ca"
+        }
+      },
+      {
+        "@id": "https://ror.org/03fxm9z60",
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Bedford Institute of Oceanography",
+        "schema:alternateName": "BIO"
+      }
+    ]
+  },
+  "schema:contributor": [
+    {
+      "@type": [
+        "schema:Role"
+      ],
+      "schema:roleName": "data quality reviewer",
+      "schema:contributor": {
+        "@id": "https://orcid.org/0000-0002-7777-8888",
+        "@type": [
+          "schema:Person"
+        ],
+        "schema:name": "Lozier, M. Susan",
+        "schema:identifier": {
+          "@id": "ex:lozierOrcid",
+          "@type": [
+            "schema:PropertyValue"
+          ],
+          "schema:propertyID": "https://registry.identifiers.org/registry/orcid",
+          "schema:value": "0000-0002-7777-8888",
+          "schema:url": "https://orcid.org/0000-0002-7777-8888"
+        }
+      }
+    }
+  ],
+  "schema:publisher": {
+    "@id": "https://ror.org/007hqnf44",
+    "@type": [
+      "schema:Organization"
+    ],
+    "schema:name": "Ocean Sciences Division, DFO Canada",
+    "schema:url": "https://www.dfo-mpo.gc.ca"
+  },
+  "schema:provider": [
+    {
+      "@id": "https://ror.org/007hqnf44"
+    }
+  ],
+  "schema:funding": [
+    {
+      "@type": [
+        "schema:MonetaryGrant"
+      ],
+      "schema:name": "Atlantic Zone Monitoring Program",
+      "schema:description": "Long-term monitoring of physical and biological oceanographic conditions in the NW Atlantic",
+      "schema:identifier": {
+        "@id": "ex:azmpGrant",
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "https://example.org/grant-registry",
+        "schema:value": "AZMP-2020-001"
+      },
+      "schema:funder": {
+        "@type": [
+          "schema:Organization"
+        ],
+        "schema:name": "Fisheries and Oceans Canada",
+        "schema:identifier": {
+          "@id": "ex:dfoRor",
+          "@type": [
+            "schema:PropertyValue"
+          ],
+          "schema:propertyID": "https://registry.identifiers.org/registry/ror",
+          "schema:value": "007hqnf44",
+          "schema:url": "https://ror.org/007hqnf44"
+        }
+      }
+    }
+  ],
+  "schema:distribution": [
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "NetCDF dataset",
+      "schema:description": "CF-compliant NetCDF4 with all CTD profiles",
+      "schema:contentUrl": "https://example.org/data/nadw-ctd-2015-2024.nc",
+      "schema:encodingFormat": [
+        "application/x-netcdf"
+      ],
+      "spdx:checksum": {
+        "@type": [
+          "spdx:Checksum"
+        ],
+        "spdx:algorithm": "checksumAlgorithm_sha256",
+        "spdx:checksumValue": "b3e4f5a6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4"
+      },
+      "dcterms:conformsTo": [
+        {
+          "@id": "https://cfconventions.org/"
+        }
+      ],
+      "schema:provider": [
+        {
+          "@id": "https://ror.org/007hqnf44",
+          "@type": [
+            "schema:Organization"
+          ],
+          "schema:name": "Ocean Sciences Division, DFO Canada"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "schema:DataDownload"
+      ],
+      "schema:name": "CSV profiles export",
+      "schema:contentUrl": "https://example.org/data/nadw-ctd-2015-2024.csv",
+      "schema:encodingFormat": [
+        "text/csv"
+      ],
+      "dcterms:conformsTo": [
+        {
+          "@id": "https://www.ietf.org/rfc/rfc4180"
+        }
+      ]
+    }
+  ],
+  "schema:relatedLink": [
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "documentation",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:name": "NADW Cruise Reports",
+        "schema:description": "Annual cruise reports with station maps and instrument calibration details",
+        "schema:url": "https://example.org/docs/nadw-cruise-reports",
+        "schema:encodingFormat": "text/html",
+        "schema:httpMethod": "GET",
+        "schema:contentType": "text/html",
+        "schema:urlTemplate": "https://example.org/docs/nadw-cruise-reports/{year}"
+      }
+    },
+    {
+      "@type": [
+        "schema:LinkRole"
+      ],
+      "schema:linkRelationship": "service",
+      "schema:target": {
+        "@type": [
+          "schema:EntryPoint"
+        ],
+        "schema:name": "OPeNDAP access",
+        "schema:url": "https://example.org/opendap/nadw-ctd",
+        "schema:encodingFormat": "application/x-netcdf"
+      }
+    }
+  ],
+  "schema:publishingPrinciples": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "DFO Open Data Policy",
+      "schema:url": "https://example.org/policies/dfo-open-data"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "@id": "ex:varTemperature",
+      "schema:name": "sea_water_temperature",
+      "schema:description": "In-situ temperature measured by SBE 911plus CTD",
+      "schema:alternateName": [
+        "Temperature"
+      ],
+      "schema:propertyID": [
+        {
+          "@type": [
+            "schema:DefinedTerm"
+          ],
+          "schema:name": "Sea water temperature",
+          "schema:identifier": "https://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/",
+          "schema:inDefinedTermSet": "https://vocab.nerc.ac.uk/collection/P01/current/",
+          "schema:termCode": "TEMPPR01"
+        }
+      ],
+      "schema:unitText": "degrees Celsius",
+      "schema:unitCode": {
+        "@id": "http://qudt.org/vocab/unit/DEG_C"
+      },
+      "schema:minValue": -1.8,
+      "schema:maxValue": 12.5,
+      "schema:measurementTechnique": "SBE 911plus CTD with dual temperature sensors",
+      "schema:url": "https://example.org/variables/sea-water-temp"
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "@id": "ex:varSalinity",
+      "schema:name": "sea_water_practical_salinity",
+      "schema:description": "Practical salinity derived from conductivity, temperature, and pressure",
+      "schema:alternateName": [
+        "Salinity"
+      ],
+      "schema:propertyID": [
+        {
+          "@id": "https://vocab.nerc.ac.uk/collection/P01/current/PSALPR01/"
+        }
+      ],
+      "schema:unitText": "PSU",
+      "schema:minValue": 33.5,
+      "schema:maxValue": 35.2
+    },
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "@id": "ex:varOxygen",
+      "schema:name": "dissolved_oxygen",
+      "schema:description": "Dissolved oxygen concentration from SBE 43 sensor",
+      "schema:propertyID": [
+        "dissolved_oxygen_concentration"
+      ],
+      "schema:unitText": "umol/kg",
+      "schema:minValue": 180.0,
+      "schema:maxValue": 340.0
+    }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "Labrador Sea",
+        "schema:identifier": "https://www.marineregions.org/mrgid/4287",
+        "schema:inDefinedTermSet": "https://www.marineregions.org/gazetteer.php",
+        "schema:termCode": "mrgid:4287"
+      },
+      "schema:additionalType": [
+        "ocean basin"
+      ],
+      "schema:identifier": "https://www.marineregions.org/mrgid/4287",
+      "schema:alternateName": ["Labrador Sea", "Mer du Labrador"],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "53.0 -60.0 65.0 -45.0"
+      },
+      "geosparql:hasGeometry": {
+        "@type": [
+          "sf:Polygon"
+        ],
+        "geosparql:asWKT": {
+          "@type": [
+            "geosparql:wktLiteral"
+          ],
+          "@value": "POLYGON((-60 53, -45 53, -45 65, -60 65, -60 53))"
+        },
+        "geosparql:crs": {
+          "@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+        }
+      }
+    },
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:name": "AR7W Transect Station 12",
+      "schema:geo": {
+        "@type": [
+          "schema:GeoCoordinates"
+        ],
+        "schema:latitude": 56.55,
+        "schema:longitude": -52.58
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "2015-02-01/2024-03-31",
+    {
+      "@context": {
+        "time": "http://www.w3.org/2006/time#",
+        "schema": "http://schema.org/"
+      },
+      "@type": [
+        "time:ProperInterval"
+      ],
+      "schema:description": "Observation period spanning 10 winter convection seasons",
+      "time:hasBeginning": {
+        "@type": [
+          "time:Instant"
+        ],
+        "time:inTimePosition": {
+          "@type": [
+            "time:TimePosition"
+          ],
+          "time:hasTRS": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian",
+          "time:numericPosition": 2015.08
+        }
+      },
+      "time:hasEnd": {
+        "@type": [
+          "time:Instant"
+        ],
+        "time:inTimePosition": {
+          "@type": [
+            "time:TimePosition"
+          ],
+          "time:hasTRS": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian",
+          "time:numericPosition": 2024.25
+        }
+      }
+    }
+  ],
+  "dqv:hasQualityMeasurement": [
+    {
+      "@type": [
+        "dqv:QualityMeasurement"
+      ],
+      "dqv:isMeasurementOf": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "Temperature sensor accuracy",
+        "schema:identifier": "https://vocab.nerc.ac.uk/collection/P01/current/TEMPACCR/",
+        "schema:inDefinedTermSet": "https://vocab.nerc.ac.uk/collection/P01/current/",
+        "schema:termCode": "TEMPACCR"
+      },
+      "dqv:value": "±0.001°C (ITS-90)"
+    },
+    {
+      "@type": [
+        "dqv:QualityMeasurement"
+      ],
+      "dqv:isMeasurementOf": "Completeness",
+      "dqv:value": {
+        "@type": [
+          "schema:DefinedTerm"
+        ],
+        "schema:name": "Complete",
+        "schema:identifier": "https://example.org/completeness-vocab/COMPLETE",
+        "schema:inDefinedTermSet": "https://example.org/completeness-vocab",
+        "schema:termCode": "COMPLETE"
+      }
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": [
+        "prov:Activity"
+      ],
+      "prov:used": [
+        {
+          "@id": "ex:ar7wCruiseProgram"
+        },
+        {
+          "@id": "ex:sbe911PlusCTD"
+        }
+      ]
+    }
+  ],
+  "prov:wasDerivedFrom": [
+    {
+      "@id": "ex:rawCTDCasts",
+      "@type": [
+        "schema:Dataset"
+      ],
+      "schema:name": "AR7W Raw CTD Cast Data",
+      "schema:url": "https://example.org/data/ar7w-raw"
+    }
+  ],
+  "schema:subjectOf": {
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "@id": "ex:metadataRecord42",
+    "schema:about": {
+      "@id": "ex:completeDiscoveryDataset42"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/bbr/metadata/profiles/cdifProfile/cdifCore"
+      },
+      {
+        "@id": "https://w3id.org/cdif/core/1.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0"
+      }
+    ],
+    "schema:dateModified": "2025-03-12",
+    "schema:sdDatePublished": "2024-09-05",
+    "schema:maintainer": {
+      "@id": "https://orcid.org/0000-0003-4444-5555",
+      "@type": [
+        "schema:Person"
+      ],
+      "schema:name": "Thériault, Caroline",
+      "schema:contactPoint": {
+        "@type": [
+          "schema:ContactPoint"
+        ],
+        "schema:email": "caroline.theriault@bio.gc.ca"
+      }
+    },
+    "schema:includedInDataCatalog": {
+      "@id": "https://example.org/catalog/dfo-ocean-data",
+      "@type": [
+        "schema:DataCatalog"
+      ],
+      "schema:name": "DFO Ocean Science Data Catalog",
+      "schema:url": "https://example.org/catalog/dfo-ocean-data",
+      "schema:identifier": {
+        "@id": "ex:dfoCatalogId",
+        "@type": [
+          "schema:PropertyValue"
+        ],
+        "schema:propertyID": "https://example.org/catalog-registry",
+        "schema:value": "dfo-ocean-catalog-001"
+      }
+    }
+  }
+}

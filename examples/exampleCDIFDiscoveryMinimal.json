@@ -1,0 +1,51 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@id": "https://example.org/dataset/minimal-discovery-001",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Arctic Sea Ice Extent Monthly Averages",
+  "schema:identifier": "https://doi.org/10.5281/zenodo.1234567",
+  "schema:dateModified": "2025-06-15",
+  "schema:url": "https://example.org/dataset/arctic-sea-ice-extent",
+  "schema:license": [
+    {
+      "@type": [
+        "schema:CreativeWork"
+      ],
+      "schema:name": "Creative Commons Attribution 4.0",
+      "schema:url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": ["schema:PropertyValue"],
+      "schema:name": "sea ice extent"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "https://example.org/metadata/minimal-discovery-001",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      "dcat:CatalogRecord"
+    ],
+    "schema:about": {
+      "@id": "https://example.org/dataset/minimal-discovery-001"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.0"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.0"
+      }
+    ]
+  }
+}
