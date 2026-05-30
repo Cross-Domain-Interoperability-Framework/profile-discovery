@@ -7,13 +7,13 @@
   - [Validation](#validation)
 - [Provenance of the artifacts](#provenance-of-the-artifacts)
 - [Dataset Properties added by Discovery Profile](#dataset-properties-added-by-discovery-profile)
-  - [dqv:QualityMeasurement](#sec-qualitymeasurement)
-  - [GeoCoordinates](#sec-geocoordinates)
-  - [GeoShape](#sec-geoshape)
-  - [PropertyValueSpecification](#sec-propertyvaluespec)
-  - [sf:SimpleFeature](#sec-sfsimplefeature)
-  - [time:Proper Interval](#sec-properinterval)
-  - [time:TimePosition](#sec-timeposition)
+  - [dqv:QualityMeasurement](#dqvqualitymeasurement)
+  - [GeoCoordinates](#geocoordinates)
+  - [GeoShape](#geoshape)
+  - [PropertyValueSpecification](#propertyvaluespecification)
+  - [sf:SimpleFeature](#sfsimplefeature)
+  - [time:Proper Interval](#timeproper-interval)
+  - [time:TimePosition](#timetimeposition)
 
 # Purpose and scope
 
@@ -58,7 +58,7 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 
 # Dataset Properties added by Discovery Profile
 
-## dqv:QualityMeasurement {#sec-qualitymeasurement}
+## dqv:QualityMeasurement
 
 ### @type
 
@@ -74,7 +74,7 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 - **Cardinality:** Required
 - **Content:** string or [DefinedTerm](#sec-definedterm)
 
-## GeoCoordinates {#sec-geocoordinates}
+## GeoCoordinates
 
 - A point location specified with latitude and longitude in decimal degrees, using the WGS84 spatial reference system.
 
@@ -94,7 +94,7 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 - **Content:** number
 - **Description:** east-longitude coordinate in decimal degrees. Value must be \>= -180 and \<= 180.
 
-## GeoShape {#sec-geoshape}
+## GeoShape
 
 - CDIF limits schema:GeoShape to a box or line (schema.org includes other options). Point locations are tuples of {latitude east-longitude} (y x). (documentation from [Science on Schema.org](https://github.com/ESIPFed/science-on-schema.org/blob/develop/guides/Dataset.md#spatial-coverage) see details there)
 
@@ -115,7 +115,7 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 - **Content:** string
 - **Description:** a series of two or more points. Use for extents like a ship track, flight path, or foot traverse.
 
-## PropertyValueSpecification {#sec-propertyvaluespec}
+## PropertyValueSpecification
 
 - Description of the kind of value expected for a variable.
 
@@ -147,7 +147,7 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 - **Content:** string
 - **Description:** regular expression to validate values for template parameters.
 
-## sf:SimpleFeature {#sec-sfsimplefeature}
+## sf:SimpleFeature
 
 ### @type
 
@@ -167,7 +167,7 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 - **Content:** [object reference](#object-reference)
 - **Description:** specify the coordinate reference system for the coordinate numbers in the WKT location description.
 
-## time:Proper Interval {#sec-properinterval}
+## time:Proper Interval
 
 - Intervals can be bounded by named ordinal eras (e.g. Jurassic, Tang dynasty, Paleolithic) identified by URI, or by numeric bounds that are time coordinates in a specified reference system (implemented by the TimePosition data type). This implementation is a simplified profile based on the [W3C OWL time specification](https://www.w3.org/TR/owl-time/), using the [http://www.w3.org/2006/time#](http://www.w3.org/2006/time) namespace, which is included in the default context for this profile.
 
@@ -201,16 +201,16 @@ OR:
 ### time:hasBeginning
 
 - **Cardinality:** Optional
-- **Content:** [time:TimePosition](#sec-timeposition)
+- **Content:** [time:TimePosition](#timetimeposition)
 - **Description:** Temporal position for the beginning (older bound) of the interval, located by a numeric value in a temporal reference system
 
 ### time:hasEnd
 
 - **Cardinality:** Optional
-- **Content:** [time:TimePosition](#sec-timeposition)
+- **Content:** [time:TimePosition](#timetimeposition)
 - **Description:** Temporal position for the end (younger bound) of the interval, located by a numeric value in a temporal reference system
 
-## time:TimePosition {#sec-timeposition}
+## time:TimePosition
 
 ### @type
 
