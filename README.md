@@ -39,6 +39,11 @@ These artifacts are generated and must be re-synced when the source register cha
 
 Source profile: `_sources/profiles/cdifProfile/cdifDiscovery/`.
 
+## Development branch
+
+Active work for the 2026-06 review revision is on the `reviewRevision202606` branch. `main` reflects the prior release state. New changes should target the review branch; it is merged to main on release.
+
+
 ## License
 
 This work is dedicated to the public domain under [CC0 1.0 Universal](LICENSE).
