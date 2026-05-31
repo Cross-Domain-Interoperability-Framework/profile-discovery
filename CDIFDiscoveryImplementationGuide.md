@@ -17,9 +17,13 @@
 
 # Purpose and scope
 
+[↑ Back to TOC](#table-of-contents)
+
 The **CDIF Discovery profile module** (`cdifDiscovery`) defines optional properties measurement technique, spatial and temporal coverage, and quality measurements to extend the core profile with properties useful for describing a subset of resources, but are not generally applicable.
 
 # Conformance
+
+[↑ Back to TOC](#table-of-contents)
 
 A resource conforms to the CDIF Discovery profile when its catalog record declares conformance the Discovery profile identifier. The catalog record is carried on `schema:subjectOf` as a `dcat:CatalogRecord`:
 
@@ -35,6 +39,8 @@ Other properties added in the discovery profile are optional; conformance only r
 
 ## Validation
 
+[↑ Back to TOC](#table-of-contents)
+
 Two validators ship with this repository:
 - **JSON Schema** — `cdifDiscoveryStructuredSchema.json` (Draft 2020-12), generated from the source register.
 - **SHACL** — `discoveryRules.shacl`, a self-contained shapes graph merged from every composing building block plus the profile-level shapes, usable standalone.
@@ -49,16 +55,22 @@ Validation is **open-world**: properties not described by the profile are allowe
 
 # Provenance of the artifacts
 
+[↑ Back to TOC](#table-of-contents)
+
 The schema and SHACL files in this repository are generated from the canonical source register, [metadataBuildingBlocks](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks):
 
 - `cdifDiscoveryStructuredSchema.json` ← `tools/resolve_schema.py cdifDiscovery`
 - `discoveryRules.shacl` ← `tools/validate_shacl.py cdifDiscovery --emit-shapes`
 
-Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-sync these artifacts whenever the source register changes.
+Artefacts for the core profile are in this [Github repository](https://github.com/Cross-Domain-Interoperability-Framework/profile-discovery/tree/reviewRevision202606) (TBD--update link to release tag)
 
 # Dataset Properties added by Discovery Profile
 
+[↑ Back to TOC](#table-of-contents)
+
 ## dqv:QualityMeasurement
+
+[↑ Back to TOC](#table-of-contents)
 
 ### @type
 
@@ -75,6 +87,8 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 - **Content:** string or [DefinedTerm](#sec-definedterm)
 
 ## GeoCoordinates
+
+[↑ Back to TOC](#table-of-contents)
 
 - A point location specified with latitude and longitude in decimal degrees, using the WGS84 spatial reference system.
 
@@ -96,6 +110,8 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 
 ## GeoShape
 
+[↑ Back to TOC](#table-of-contents)
+
 - CDIF limits schema:GeoShape to a box or line (schema.org includes other options). Point locations are tuples of {latitude east-longitude} (y x). (documentation from [Science on Schema.org](https://github.com/ESIPFed/science-on-schema.org/blob/develop/guides/Dataset.md#spatial-coverage) see details there)
 
 ### @type
@@ -116,6 +132,8 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 - **Description:** a series of two or more points. Use for extents like a ship track, flight path, or foot traverse.
 
 ## PropertyValueSpecification
+
+[↑ Back to TOC](#table-of-contents)
 
 - Description of the kind of value expected for a variable.
 
@@ -149,6 +167,8 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 
 ## sf:SimpleFeature
 
+[↑ Back to TOC](#table-of-contents)
+
 ### @type
 
 - **Cardinality:** Required
@@ -168,6 +188,8 @@ Source profile directory: `_sources/profiles/cdifProfile/cdifDiscovery/`. Re-syn
 - **Description:** specify the coordinate reference system for the coordinate numbers in the WKT location description.
 
 ## time:Proper Interval
+
+[↑ Back to TOC](#table-of-contents)
 
 - Intervals can be bounded by named ordinal eras (e.g. Jurassic, Tang dynasty, Paleolithic) identified by URI, or by numeric bounds that are time coordinates in a specified reference system (implemented by the TimePosition data type). This implementation is a simplified profile based on the [W3C OWL time specification](https://www.w3.org/TR/owl-time/), using the [http://www.w3.org/2006/time#](http://www.w3.org/2006/time) namespace, which is included in the default context for this profile.
 
@@ -211,6 +233,8 @@ OR:
 - **Description:** Temporal position for the end (younger bound) of the interval, located by a numeric value in a temporal reference system
 
 ## time:TimePosition
+
+[↑ Back to TOC](#table-of-contents)
 
 ### @type
 
