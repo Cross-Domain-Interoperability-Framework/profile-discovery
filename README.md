@@ -1,8 +1,8 @@
 # CDIF Discovery (profile module)
 
-This repository holds the published artifacts for the **CDIF Discovery profile module** — the `cdifDiscovery` building block from the [metadataBuildingBlocks](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks) source register.
+This repository holds the published artifacts for the **CDIF Discovery profile** — the `cdifDiscovery` building block from the [metadataBuildingBlocks](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks) source register.
 
-> **Scope.** `cdifDiscovery` is a profile *module*. It currently composes `cdifCore` and is reserved for discovery-specific extensions (e.g. measurement technique, spatial/temporal coverage, and quality measurements once those are split out of the Core foundation). The full discovery *application profile* — the human-facing content requirements for making resources findable — is published in the composite [doc-corediscovery](https://github.com/Cross-Domain-Interoperability-Framework/doc-corediscovery) repository.
+> **Scope.** `cdifDiscovery` is a profile *module*. It includes onlty the discovery-specific extensions (e.g. measurement technique, spatial/temporal coverage, and quality measurements once those are split out of the Core foundation). The full discovery *document specification* — the human-facing content requirements for making resources findable — is published in the composite [doc-corediscovery](https://github.com/Cross-Domain-Interoperability-Framework/doc-corediscovery) repository.
 
 ## Specification
 
@@ -14,7 +14,6 @@ This repository holds the published artifacts for the **CDIF Discovery profile m
 
 A conforming instance declares, in its `dcterms:conformsTo`, both:
 
-- `https://w3id.org/cdif/core/1.0`
 - `https://w3id.org/cdif/discovery/1.0`
 
 ## Examples
@@ -46,4 +45,4 @@ Active work for the 2026-06 review revision is on the `reviewRevision202606` bra
 
 ## License
 
-This work is dedicated to the public domain under [CC0 1.0 Universal](LICENSE).
+This work is dedicated to the public domain under [License](LICENSE).
