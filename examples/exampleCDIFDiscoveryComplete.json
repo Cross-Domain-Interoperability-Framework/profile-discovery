@@ -568,10 +568,10 @@
         "@id": "https://w3id.org/cdif/bbr/metadata/profiles/cdifProfile/cdifCore"
       },
       {
-        "@id": "https://w3id.org/cdif/core/1.0"
+        "@id": "https://w3id.org/cdif/core/1.1"
       },
       {
-        "@id": "https://w3id.org/cdif/discovery/1.0"
+        "@id": "https://w3id.org/cdif/discovery/1.1"
       }
     ],
     "schema:dateModified": "2025-03-12",

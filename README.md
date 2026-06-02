@@ -14,7 +14,7 @@ This repository holds the published artifacts for the **CDIF Discovery profile**
 
 A conforming instance declares, in its `dcterms:conformsTo`, both:
 
-- `https://w3id.org/cdif/discovery/1.0`
+- `https://w3id.org/cdif/discovery/1.1`
 
 ## Examples
 

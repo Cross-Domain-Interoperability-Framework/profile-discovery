@@ -27,7 +27,7 @@ Source profile dir: `metadataBuildingBlocks/_sources/profiles/cdifProfile/cdifDi
 1. `@context` declares explicit prefixes (`schema`, `dcterms`, `dcat`, `prov`) — never `@vocab`.
 2. `schema:` prefix on all schema.org property names; namespace is `http://schema.org/` (never `https://`).
 3. `@type` as arrays (e.g. `["schema:Dataset"]`).
-4. `schema:subjectOf` carries a `dcat:CatalogRecord` whose `dcterms:conformsTo` includes both `https://w3id.org/cdif/core/1.0` and `https://w3id.org/cdif/discovery/1.0`.
+4. `schema:subjectOf` carries a `dcat:CatalogRecord` whose `dcterms:conformsTo` includes both `https://w3id.org/cdif/core/1.1` and `https://w3id.org/cdif/discovery/1.1`.
 5. Never strip unknown properties — validation is open-world.
 
 ## Validation
