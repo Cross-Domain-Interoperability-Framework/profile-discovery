@@ -36,3 +36,14 @@ Source profile dir: `metadataBuildingBlocks/_sources/profiles/cdifProfile/cdifDi
 python FrameAndValidate.py examples/<file>.json --validate \
   --schema cdifDiscoveryStructuredSchema.json --frame cdifDiscovery-frame.jsonld
 ```
+
+## Implementation Guide is self-contained
+
+`CDIFDiscoveryImplementationGuide.md` includes its own **Common data types**
+section at the end (Object reference, Defined Term). These foundational
+types are documented in the Core IG, but each profile IG ships its own
+copy so it stands alone — cross-repo links to `profile-core` would break
+when branches diverge. When updating the Core definitions, mirror the
+change here. Same convention is followed in other profile IGs (codelist,
+conceptscheme, etc.) — see the `## Object Reference` / `## Defined Term`
+sections in each.
