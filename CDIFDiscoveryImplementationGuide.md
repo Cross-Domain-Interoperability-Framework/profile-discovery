@@ -14,6 +14,9 @@
   - [sf:SimpleFeature](#sfsimplefeature)
   - [time:Proper Interval](#timeproper-interval)
   - [time:TimePosition](#timetimeposition)
+- [Common data types](#common-data-types)
+  - [Object reference](#object-reference)
+  - [Defined Term](#defined-term)
 
 # Purpose and scope
 
@@ -79,12 +82,12 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 ### dqv:ismeasurementOf
 
 - **Cardinality:** Required
-- **Content:** string, [object reference](#object-reference), or [DefinedTerm](#sec-definedterm)
+- **Content:** string, [object reference](#object-reference), or [DefinedTerm](#defined-term)
 
 ### dqv:value
 
 - **Cardinality:** Required
-- **Content:** string or [DefinedTerm](#sec-definedterm)
+- **Content:** string or [DefinedTerm](#defined-term)
 
 ## GeoCoordinates
 
@@ -209,13 +212,13 @@ Choice:
 ### time:startedBy
 
 - **Cardinality:** Optional
-- **Content:** string or [DefinedTerm](#sec-definedterm)
+- **Content:** string or [DefinedTerm](#defined-term)
 - **Description:** identifier for a named time ordinal era that is older bound of time interval, e.g. \'isc:LowerDevonian\'
 
 ### time:finishedBy
 
 - **Cardinality:** Optional
-- **Content:** string or [DefinedTerm](#sec-definedterm)
+- **Content:** string or [DefinedTerm](#defined-term)
 - **Description:** identifier for a named time ordinal era that is younger bound of time interval, e.g. \'isc:LowerDevonian\'
 
 OR:
@@ -252,3 +255,57 @@ OR:
 - **Cardinality:** Required
 - **Content:** number
 - **Description:** Number that locates a temporal position in the reference frame defined by the hasTRS property.
+
+# Common data types
+
+[↑ Back to TOC](#table-of-contents)
+
+These foundational types are referenced by property descriptions throughout this guide. Definitions are reproduced here so the Discovery IG stands alone; the canonical sources are the Core profile IG and the CDIF Handbook.
+
+## Object reference
+
+[↑ Back to TOC](#table-of-contents)
+
+Linked data is implemented in rdf using URIs to reference objects that might be located in other parts of a graph, or remotely and accessed online. In the JSON-LD implementation, simply using a URI string as the value of a property does not create such a link—the value is simply a string, not the object referenced by the URI. An "object ref" is always a string containing the id of the referenced object. Thus
+
+*"schema:funder": "<https://ror.org/021nxhr62>"*
+
+does not create a link. Object references are implemented in JSON-LD as objects that have a single node identifier as their property.
+
+*"schema:funder": { "@id": "https://ror.org/021nxhr62" }*
+
+is the correct syntax to implement an object reference. Throughout this document, if 'object reference' is included as a value type for a property, be aware that instance documents might simply have this kind of object as the property value.
+
+## Defined Term
+
+[↑ Back to TOC](#table-of-contents)
+
+A `schema:DefinedTerm` represents a concept drawn from a controlled vocabulary, providing a human-readable name together with a resolvable identifier and a link to the vocabulary that defines it.
+
+### **@type**
+
+- **Cardinality:** Required – 'DefinedTerm', Repeatable
+- **Content:** string.uri
+
+### **name**
+
+- **Cardinality:** Required if no identifier or termCode
+- **Content:** string
+- **Description:** label for the term
+
+### **identifier**
+
+- **Cardinality:** Required if no name or termCode
+- **Content:** string.uri or object reference
+
+### **termCode**
+
+- **Cardinality:** Required if no name or identifier
+- **Content:** string
+- **Description:** A representative code for this keyword in the controlled vocabulary. Analogous to `skos:Notation`.
+
+### **inDefinedTermSet**
+
+- **Cardinality:** Optional
+- **Content:** string
+- **Description:** Name for the controlled vocabulary responsible for this keyword.
