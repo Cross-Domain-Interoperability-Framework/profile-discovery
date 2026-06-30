@@ -1,11 +1,8 @@
 @prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -74,36 +71,6 @@ cdifd:CDIFLabeledLinkShape a sh:NodeShape ;
             sh:path schema:url ;
             sh:pattern "^https?:\\/\\/[^\\s]+$" ] ;
     sh:targetClass schema:CreativeWork .
-
-cdifd:CDIFRelationShape a sh:NodeShape ;
-    sh:message "A cdif:Relation must carry a resolvable schema:url. dcterms:relation (URI of the related resource) and dcat:hadRole (SKOS-typed role) are recommended when the relation distinguishes the related resource from its presentation URL or carries an explicit role." ;
-    sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:message "cdif:Relation must have at least one schema:url that resolves over http(s)." ;
-            sh:minCount 1 ;
-            sh:path schema:url ;
-            sh:pattern "^https?://[^\\s]+$" ],
-        [ a sh:PropertyShape ;
-            sh:class skos:Concept ;
-            sh:message "If dcat:hadRole is provided, its value must be a skos:Concept classifying the role of the related resource." ;
-            sh:path dcat:hadRole ;
-            sh:severity sh:Warning ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "If dcterms:relation is provided, it must be a syntactically valid URI." ;
-            sh:path dcterms:relation ;
-            sh:pattern "^[a-zA-Z][a-zA-Z0-9+.-]*:[^\\s]*$" ;
-            sh:severity sh:Warning ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path schema:name ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path schema:description ] ;
-    sh:targetClass dcat:Relationship .
 
 cdifd:CDIFVariableMeasuredShape a sh:NodeShape ;
     sh:property [ sh:message "a propertID must be a uri reference, a name string, or a schema:DefinedTerm" ;
