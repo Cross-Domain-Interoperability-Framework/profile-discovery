@@ -1,57 +1,83 @@
 {
-    "@context": {
-        "schema": "http://schema.org/",
-        "dcterms": "http://purl.org/dc/terms/",
-        "dcat": "http://www.w3.org/ns/dcat#",
-        "geosparql": "http://www.opengis.net/ont/geosparql#",
-        "dqv": "http://www.w3.org/ns/dqv#",
-        "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
-        "ex": "https://example.org/"
-    },
-    "@id": "ex:dataset/arctic-sea-ice-extent-2025",
-    "@type": ["schema:Dataset"],
-    "schema:name": "Arctic Sea Ice Extent Monthly Averages",
-    "schema:identifier": "https://doi.org/10.5281/zenodo.1234567",
-    "schema:url": "https://example.org/dataset/arctic-sea-ice-extent",
-    "schema:dateModified": "2025-06-15",
-    "schema:license": ["https://creativecommons.org/licenses/by/4.0/"],
-    "schema:measurementTechnique": [
-        "passive microwave satellite remote sensing"
-    ],
-    "schema:variableMeasured": [
-        {
-            "@type": ["schema:PropertyValue"],
-            "schema:name": "sea ice extent",
-            "schema:unitText": "million km^2"
-        }
-    ],
-    "schema:spatialCoverage": [
-        {
-            "@type": ["schema:Place"],
-            "schema:geo": {
-                "@type": ["schema:GeoShape"],
-                "schema:box": "60 -180 90 180"
-            }
-        }
-    ],
-    "schema:temporalCoverage": [
-        "1979-01-01/2025-06-30"
-    ],
-    "dqv:hasQualityMeasurement": [
-        {
-            "@type": ["dqv:QualityMeasurement"],
-            "dqv:isMeasurementOf": {"@id": "https://www.w3.org/ns/dqv#Completeness"},
-            "dqv:value": "0.98"
-        }
-    ],
-    "schema:subjectOf": {
-        "@id": "ex:metadata/arctic-sea-ice-extent-2025",
-        "@type": ["schema:Dataset"],
-        "schema:additionalType": ["dcat:CatalogRecord"],
-        "schema:about": {"@id": "ex:dataset/arctic-sea-ice-extent-2025"},
-        "dcterms:conformsTo": [
-            {"@id": "https://w3id.org/cdif/core/1.1"},
-            {"@id": "https://w3id.org/cdif/discovery/1.1"}
-        ]
+  "@context": {
+    "schema": "http://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "geosparql": "http://www.opengis.net/ont/geosparql#",
+    "dqv": "http://www.w3.org/ns/dqv#",
+    "cdi": "http://ddialliance.org/Specification/DDI-CDI/1.0/RDF/",
+    "ex": "https://example.org/"
+  },
+  "@id": "ex:dataset/arctic-sea-ice-extent-2025",
+  "@type": [
+    "schema:Dataset"
+  ],
+  "schema:name": "Arctic Sea Ice Extent Monthly Averages",
+  "schema:identifier": "https://doi.org/10.5281/zenodo.1234567",
+  "schema:url": "https://example.org/dataset/arctic-sea-ice-extent",
+  "schema:dateModified": "2025-06-15",
+  "schema:license": [
+    "https://creativecommons.org/licenses/by/4.0/"
+  ],
+  "schema:measurementTechnique": [
+    "passive microwave satellite remote sensing"
+  ],
+  "schema:variableMeasured": [
+    {
+      "@type": [
+        "schema:PropertyValue"
+      ],
+      "schema:name": "sea ice extent",
+      "schema:unitText": "million km^2"
     }
+  ],
+  "schema:spatialCoverage": [
+    {
+      "@type": [
+        "schema:Place"
+      ],
+      "schema:geo": {
+        "@type": [
+          "schema:GeoShape"
+        ],
+        "schema:box": "60 -180 90 180"
+      }
+    }
+  ],
+  "schema:temporalCoverage": [
+    "1979-01-01/2025-06-30"
+  ],
+  "dqv:hasQualityMeasurement": [
+    {
+      "@type": [
+        "dqv:QualityMeasurement"
+      ],
+      "dqv:isMeasurementOf": {
+        "@id": "https://www.w3.org/ns/dqv#Completeness"
+      },
+      "dqv:value": "0.98"
+    }
+  ],
+  "schema:subjectOf": {
+    "@id": "ex:metadata/arctic-sea-ice-extent-2025",
+    "@type": [
+      "schema:Dataset"
+    ],
+    "schema:additionalType": [
+      {
+        "@id": "dcat:CatalogRecord"
+      }
+    ],
+    "schema:about": {
+      "@id": "ex:dataset/arctic-sea-ice-extent-2025"
+    },
+    "dcterms:conformsTo": [
+      {
+        "@id": "https://w3id.org/cdif/core/1.1"
+      },
+      {
+        "@id": "https://w3id.org/cdif/discovery/1.1"
+      }
+    ]
+  }
 }
