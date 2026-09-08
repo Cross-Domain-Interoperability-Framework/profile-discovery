@@ -557,7 +557,9 @@
       "schema:Dataset"
     ],
     "schema:additionalType": [
-      "dcat:CatalogRecord"
+      {
+        "@id": "dcat:CatalogRecord"
+      }
     ],
     "@id": "ex:metadataRecord42",
     "schema:about": {
