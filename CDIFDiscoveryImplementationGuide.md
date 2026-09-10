@@ -65,7 +65,7 @@ The schema and SHACL files in this repository are generated from the canonical s
 - `cdifDiscoveryStructuredSchema.json` ← `tools/resolve_schema.py cdifDiscovery`
 - `discoveryRules.shacl` ← `tools/validate_shacl.py cdifDiscovery --emit-shapes`
 
-Artefacts for the core profile are in this [Github repository](https://github.com/Cross-Domain-Interoperability-Framework/profile-discovery/tree/reviewRevision202606) (TBD--update link to release tag)
+Artefacts for the core profile are in this [Github repository](https://github.com/Cross-Domain-Interoperability-Framework/profile-discovery/tree/main) (TBD--update link to release tag)
 
 # Dataset Properties added by Discovery Profile
 
