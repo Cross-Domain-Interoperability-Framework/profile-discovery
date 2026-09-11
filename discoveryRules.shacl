@@ -1,10 +1,33 @@
 @prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cdifd:CDIFDiscoveryConformsToShape a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:hasValue <https://w3id.org/cdif/discovery/1.1> ;
+            sh:message "A catalog record on a dataset using CDIF discovery properties should include dcterms:conformsTo <https://w3id.org/cdif/discovery/1.1>." ;
+            sh:minCount 1 ;
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Warning ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:prefixes cdifd: ;
+            sh:select """
+    		PREFIX schema: <http://schema.org/>
+    		PREFIX dcat: <http://www.w3.org/ns/dcat#>
+    		PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    		SELECT ?this WHERE {
+    			?subject schema:subjectOf ?this .
+    			?subject a schema:Dataset .
+    			?this schema:additionalType ?at .
+    			FILTER( ?at = dcat:CatalogRecord || STR(?at) = "dcat:CatalogRecord" )
+    		}
+    	""" ] .
 
 cdifd:CDIFIdentifierShape a sh:NodeShape ;
     sh:message "identifier rules. for an identifier, the property ID is expected to specify an identifier scheme.Get values from https://registry.identifiers.org/registry/ for interoperability",
@@ -213,6 +236,29 @@ cdifd:timePositionNode a sh:NodeShape ;
             sh:path time:numericPosition ] ;
     sh:targetClass time:TimePosition .
 
+<https://cdif.org/validation/0.1/skos#ConceptShape> a sh:NodeShape ;
+    sh:message "A SKOS Concept must have at least a prefLabel." ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:property <https://cdif.org/validation/0.1/skos#conceptPrefLabelProperty> ;
+    sh:targetClass skos:Concept .
+
+<https://cdif.org/validation/0.1/skos#conceptBroaderNotSelfShape> a sh:NodeShape ;
+    sh:sparql [ sh:message "A Concept must not declare itself as skos:broader (reflexive hierarchy)." ;
+            sh:select """
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT $this
+            WHERE {
+                $this skos:broader $this .
+            }
+        """ ] ;
+    sh:targetClass skos:Concept .
+
+<https://cdif.org/validation/0.1/skos#prefLabelUniqueLangShape> a sh:NodeShape ;
+    sh:property [ sh:message "A Concept should have at most one skos:prefLabel per language tag (SKOS integrity condition S14)." ;
+            sh:path skos:prefLabel ;
+            sh:uniqueLang true ] ;
+    sh:targetClass skos:Concept .
+
 cdifd:CDIFDefinedTermShape a sh:NodeShape ;
     sh:message "A DefinedTerm must have a name (label), an identifier, OR a termCode. All three are recommended." ;
     sh:or ( [ sh:property [ sh:message "a defined term should have an identifier that is a resolvable URI" ;
@@ -302,4 +348,9 @@ cdifd:termLabelProperty a sh:PropertyShape ;
     sh:minCount 1 ;
     sh:minLength 3 ;
     sh:path schema:name .
+
+<https://cdif.org/validation/0.1/skos#conceptPrefLabelProperty> a sh:PropertyShape ;
+    sh:message "Every skos:Concept must have at least one skos:prefLabel." ;
+    sh:minCount 1 ;
+    sh:path skos:prefLabel .
 
