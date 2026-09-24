@@ -144,7 +144,7 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 - **Cardinality:** Required -- \'PropertyValueSpecification\', repeatable
 
-### valueName
+### schema:valueName
 
 - **Cardinality:** Required
 - **Content:** string
@@ -156,13 +156,13 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 - **Content:** string
 - **Description:** Explanation of the purpose of the parameter, its range of values, datatype, etc.
 
-### valueRequired
+### schema:valueRequired
 
 - **Cardinality:** optional
 - **Content:** boolean
 - **Description:** Default is true. False if the specified parameter is not required to fill the template.
 
-### valuePattern
+### schema:valuePattern
 
 - **Cardinality:** optional
 - **Content:** string
