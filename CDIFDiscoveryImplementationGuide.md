@@ -20,13 +20,13 @@
 
 # Purpose and scope
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 The **CDIF Discovery profile module** (`cdifDiscovery`) defines optional properties measurement technique, spatial and temporal coverage, and quality measurements to extend the core profile with properties useful for describing a subset of resources, but are not generally applicable.
 
 # Conformance
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 A resource conforms to the CDIF Discovery profile when its catalog record declares conformance the Discovery profile identifier. The catalog record is carried on `schema:subjectOf` as a `dcat:CatalogRecord`:
 
@@ -42,7 +42,7 @@ Other properties added in the discovery profile are optional; conformance only r
 
 ## Validation
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 Two validators ship with this repository:
 - **JSON Schema** — `cdifDiscoveryStructuredSchema.json` (Draft 2020-12), generated from the source register.
@@ -58,7 +58,7 @@ Validation is **open-world**: properties not described by the profile are allowe
 
 # Provenance of the artifacts
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 The schema and SHACL files in this repository are generated from the canonical source register, [metadataBuildingBlocks](https://github.com/Cross-Domain-Interoperability-Framework/metadataBuildingBlocks):
 
@@ -69,31 +69,31 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 # Dataset Properties added by Discovery Profile
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 ## dqv:QualityMeasurement
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 ### @type
 
 - **Cardinality:** Required -- \'dqv:QualityMeasurement\', repeatable
-- **Description:** specifies the quality measure type whose value is specified in this QualityMeasurement
 
 ### dqv:isMeasurementOf
 
 - **Cardinality:** Required
 - **Content:** string, [object reference](#object-reference), or [DefinedTerm](#defined-term)
-- **Description:** specifies the value of the measure specified
+- **Description:** specifies the quality measure type whose value is specified in this QualityMeasurement
 
 ### dqv:value
 
 - **Cardinality:** Required
 - **Content:** string or [DefinedTerm](#defined-term)
+- **Description:** specifies the value of the measure specified
 
 ## GeoCoordinates
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 - A point location specified with latitude and longitude in decimal degrees, using the WGS84 spatial reference system.
 
@@ -115,7 +115,7 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 ## GeoShape
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 - CDIF limits schema:GeoShape to a box or line (schema.org includes other options). Point locations are tuples of {latitude east-longitude} (y x). (documentation from [Science on Schema.org](https://github.com/ESIPFed/science-on-schema.org/blob/develop/guides/Dataset.md#spatial-coverage) see details there)
 
@@ -138,7 +138,7 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 ## PropertyValueSpecification
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 - Description of the kind of value expected for a variable.
 
@@ -172,7 +172,7 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 ## sf:SimpleFeature
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 ### @type
 
@@ -194,7 +194,7 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 ## time:Proper Interval
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 - Intervals can be bounded by named ordinal eras (e.g. Jurassic, Tang dynasty, Paleolithic) identified by URI, or by numeric bounds that are time coordinates in a specified reference system (implemented by the TimePosition data type). This implementation is a simplified profile based on the [W3C OWL time specification](https://www.w3.org/TR/owl-time/), using the [http://www.w3.org/2006/time#](http://www.w3.org/2006/time) namespace, which is included in the default context for this profile.
 
@@ -239,7 +239,7 @@ OR:
 
 ## time:TimePosition
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 ### @type
 
@@ -260,13 +260,13 @@ OR:
 
 # Common data types
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 These foundational types are referenced by property descriptions throughout this guide. Definitions are reproduced here so the Discovery IG stands alone; the canonical sources are the Core profile IG and the CDIF Handbook.
 
 ## Object reference
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 Linked data is implemented in rdf using URIs to reference objects that might be located in other parts of a graph, or remotely and accessed online. In the JSON-LD implementation, simply using a URI string as the value of a property does not create such a link—the value is simply a string, not the object referenced by the URI. An "object ref" is always a string containing the id of the referenced object. Thus
 
@@ -280,7 +280,7 @@ is the correct syntax to implement an object reference. Throughout this document
 
 ## Defined Term
 
-[↑ Back to TOC](#table-of-contents)
+[^ Back to TOC](#table-of-contents)
 
 A `schema:DefinedTerm` represents a concept drawn from a controlled vocabulary, providing a human-readable name together with a resolvable identifier and a link to the vocabulary that defines it.
 
