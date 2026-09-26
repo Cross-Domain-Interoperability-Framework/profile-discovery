@@ -213,13 +213,13 @@ Choice:
 
 ### time:intervalStartedBy
 
-- **Cardinality:** Optional
+- **Cardinality:** Choice-at least one of time:intervalFinishedBy, time:intervalStartedBy is required
 - **Content:** string or [DefinedTerm](#defined-term)
 - **Description:** identifier for a named time ordinal era that is older bound of time interval, e.g. \'isc:LowerDevonian\'
 
 ### time:intervalFinishedBy
 
-- **Cardinality:** Optional
+- **Cardinality:** Choice-at least one of time:intervalFinishedBy, time:intervalStartedBy is required
 - **Content:** string or [DefinedTerm](#defined-term)
 - **Description:** identifier for a named time ordinal era that is younger bound of time interval, e.g. \'isc:LowerDevonian\'
 
@@ -227,13 +227,13 @@ OR:
 
 ### time:hasBeginning
 
-- **Cardinality:** Optional
+- **Cardinality:** Choice-at least one of time:hasBeginning, time:hasEnd is required
 - **Content:** [time:TimePosition](#timetimeposition)
 - **Description:** Temporal position for the beginning (older bound) of the interval, located by a numeric value in a temporal reference system
 
 ### time:hasEnd
 
-- **Cardinality:** Optional
+- **Cardinality:** Choice-at least one of time:hasBeginning, time:hasEnd is required
 - **Content:** [time:TimePosition](#timetimeposition)
 - **Description:** Temporal position for the end (younger bound) of the interval, located by a numeric value in a temporal reference system
 
