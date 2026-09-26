@@ -146,23 +146,11 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 - **Cardinality:** Required -- \'PropertyValueSpecification\', repeatable
 
-### schema:valueName
-
-- **Cardinality:** Required
-- **Content:** string
-- **Description:** This will be used to match the specification to parameters in a template string used to construct a query.
-
 ### description
 
-- **Cardinality:** Required
+- **Cardinality:** Optional
 - **Content:** string
 - **Description:** Explanation of the purpose of the parameter, its range of values, datatype, etc.
-
-### schema:valueRequired
-
-- **Cardinality:** optional
-- **Content:** boolean
-- **Description:** Default is true. False if the specified parameter is not required to fill the template.
 
 ### schema:valuePattern
 
@@ -205,7 +193,7 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 ### description
 
-- **Cardinality:** optional
+- **Cardinality:** Optional
 - **Content:** string
 - **Description:** Text description of the time interval. If defined by an ISO8601 time interval string, put that here.
 
