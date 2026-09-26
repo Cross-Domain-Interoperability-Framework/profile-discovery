@@ -299,6 +299,7 @@ A `schema:DefinedTerm` represents a concept drawn from a controlled vocabulary, 
 
 - **Cardinality:** Required if no name or termCode
 - **Content:** string.uri or object reference
+- **Description:** an identifier string or PropertyValue object specifying the identifier for a term
 
 ### **termCode**
 
