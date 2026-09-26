@@ -78,11 +78,13 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 ### @type
 
 - **Cardinality:** Required -- \'dqv:QualityMeasurement\', repeatable
+- **Description:** specifies the quality measure type whose value is specified in this QualityMeasurement
 
 ### dqv:isMeasurementOf
 
 - **Cardinality:** Required
 - **Content:** string, [object reference](#object-reference), or [DefinedTerm](#defined-term)
+- **Description:** specifies the value of the measure specified
 
 ### dqv:value
 
