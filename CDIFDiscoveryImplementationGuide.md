@@ -140,23 +140,28 @@ Artefacts for the core profile are in this [Github repository](https://github.co
 
 [^ Back to TOC](#table-of-contents)
 
-- Description of the kind of value expected for a variable.
+- Description of the kind of value expected for a variable, rather than an observed
+  result. A `schema:variableMeasured` item may be typed `schema:PropertyValueSpecification`
+  instead of `schema:PropertyValue` when it states the permitted range, default or unit
+  of a variable -- as a protocol or method description does -- and otherwise carries the
+  same properties as any other `variableMeasured` item.
+
+- **Not the same as an API query parameter.** `schema:PropertyValueSpecification` is also
+  used for the parameters of a `schema:potentialAction` on a WebAPI distribution, where it
+  carries `schema:valueName`, `schema:valueRequired` and `schema:valuePattern`. Those three
+  properties belong to that use only and are not part of a `variableMeasured` item. They are
+  documented in the [CDIF Core profile](https://github.com/Cross-Domain-Interoperability-Framework/profile-core/blob/main/CDIFCoreImplementationGuide.md#propertyvaluespecification),
+  which owns the WebAPI and Action shapes and reaches them from `query-input`.
 
 ### @type
 
-- **Cardinality:** Required -- \'PropertyValueSpecification\', repeatable
+- **Cardinality:** Required -- `'PropertyValueSpecification'`, repeatable
 
 ### description
 
 - **Cardinality:** Optional
 - **Content:** string
-- **Description:** Explanation of the purpose of the parameter, its range of values, datatype, etc.
-
-### schema:valuePattern
-
-- **Cardinality:** optional
-- **Content:** string
-- **Description:** regular expression to validate values for template parameters.
+- **Description:** Explanation of the meaning of the variable, its range of values, datatype, etc.
 
 ## sf:SimpleFeature
 
