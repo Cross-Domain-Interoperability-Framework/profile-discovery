@@ -23,37 +23,7 @@
       "description": "The technique, technology, or methodology used for measurement or determination of the dataset values.",
       "type": "array",
       "items": {
-        "title": "CDIF Concept-or-Term-or-String",
-        "description": "Shared shape for a CDIF property that carries either a controlled-vocabulary value or a bare string label. Wraps cdifConceptOrTerm (SKOS-concept @id-ref, schema:DefinedTerm, or inline cdif:Concept) with a plain-string alternative used for legacy or single-word labels not yet bound to a vocabulary.",
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "description": "A SKOS concept identified by URI, a schema:DefinedTerm, or an inline cdif:Concept. Shared shape used wherever a CDIF property carries either a controlled-vocabulary reference or an inline concept definition.",
-            "anyOf": [
-              {
-                "type": "object",
-                "required": [
-                  "@id"
-                ],
-                "additionalProperties": false,
-                "properties": {
-                  "@id": {
-                    "type": "string",
-                    "description": "reference to a skos concept for the data type"
-                  }
-                }
-              },
-              {
-                "$ref": "#/$defs/DefinedTerm"
-              },
-              {
-                "$ref": "#/$defs/Concept"
-              }
-            ]
-          }
-        ]
+        "$ref": "#/$defs/cdifConceptOrTermOrString"
       }
     },
     "schema:variableMeasured": {
@@ -196,15 +166,27 @@
                 "type": "object",
                 "properties": {
                   "@type": {
-                    "default": "schema:CreativeWork",
+                    "description": "Either construct, or both. A labeled link is a schema:CreativeWork at a URL; a dcat:Relationship is DCAT's association class for a typed relation to another resource. A node may declare both -- CDIF's own relation examples do -- but NEITHER IS REQUIRED TO ACCOMPANY THE OTHER.\nThat is the whole point of the anyOf. Until 2026-09-08 this block's Relation half required contains: dcat:Relationship while the labeled-link half required contains: schema:CreativeWork, and under allOf both applied to every instance, so an ordinary labeled link was unsatisfiable. Of profile-core's licenses the 29 plain strings and 1 @id-reference passed while the 10 that followed schema.org's own recommendation -- \"use schema:CreativeWork to provide a label (name) for the license\" -- failed. 412782113 fixed that by deleting the dcat:Relationship mandate outright, which left the JSON Schema with no notion of dcat:Relationship at all while rules.shacl went on targeting it as a class. A pure DCAT relation then met a SHACL requirement with no schema counterpart. This anyOf restores the type to the schema WITHOUT restoring the conjunction.",
+                    "default": [
+                      "schema:CreativeWork"
+                    ],
                     "type": "array",
                     "items": {
                       "type": "string"
                     },
-                    "contains": {
-                      "const": "schema:CreativeWork"
-                    },
-                    "minItems": 1
+                    "minItems": 1,
+                    "anyOf": [
+                      {
+                        "contains": {
+                          "const": "schema:CreativeWork"
+                        }
+                      },
+                      {
+                        "contains": {
+                          "const": "dcat:Relationship"
+                        }
+                      }
+                    ]
                   },
                   "schema:name": {
                     "type": "string"
@@ -217,47 +199,84 @@
                     "format": "uri"
                   },
                   "dcat:hadRole": {
-                    "title": "CDIF Concept-or-Term-or-String",
-                    "description": "Role of the related resource as a SKOS Concept (DCAT canonical role slot). Present only on a link that expresses a relationship; a plain labeled link such as a license omits it.",
+                    "description": "Role of the related resource. Present only on a link that expresses a relationship; a plain labeled link such as a license omits it.\nDCAT's declared range is dcat:Role (dcat.ttl: rdfs:range dcat:Role, and dcat:Role rdfs:subClassOf skos:Concept), so the DCAT-native form is a node typed dcat:Role. That form was NOT accepted here before 2026-10-01: this property was cdifConceptOrTermOrString alone, which matches a bare string, a sealed @id reference, a schema:DefinedTerm or a skos:Concept -- none of which a dcat:Role-typed node satisfies, because JSON Schema does no subclass reasoning.\ndcat:Role is added as a branch rather than replacing the others, so the DCAT-native form becomes valid without invalidating anything already written. Note this leaves CDIF LOOSER than DCAT, deliberately: DCAT's range is dcat:Role alone, and CDIF also accepts a plain skos:Concept, a DefinedTerm, an @id reference and a string. That is the same both-forms stance taken on dcterms:relation, and it is a choice rather than an oversight -- do not read the extra branches as something not yet tightened.",
                     "anyOf": [
                       {
-                        "type": "string"
+                        "description": "A dcat:Role -- DCAT's declared range for dcat:hadRole. Defined inline rather than as its own building block because nothing else in the register needs it yet; dcat:hadRole's domain is owl:unionOf [prov:Attribution, dcat:Relationship], so promote it to a block if a qualified attribution ever needs the same shape.\ndcat:Role rdfs:subClassOf skos:Concept, so the skos:prefLabel / skos:inScheme furniture of a concept is permitted alongside; it is not required here because DCAT states no cardinality constraints on the class -- dcat.ttl declares no rdfs:subClassOf and no owl:Restriction on dcat:Relationship, and the \"mandatory\" wording in the DCAT-3 document is prose in the spec tables rather than an axiom in the vocabulary.",
+                        "type": "object",
+                        "properties": {
+                          "@id": {
+                            "type": "string",
+                            "description": "IRI of the role concept, ideally from a controlled vocabulary."
+                          },
+                          "@type": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "contains": {
+                              "const": "dcat:Role"
+                            },
+                            "minItems": 1
+                          }
+                        },
+                        "required": [
+                          "@type"
+                        ]
                       },
                       {
-                        "description": "A SKOS concept identified by URI, a schema:DefinedTerm, or an inline cdif:Concept. Shared shape used wherever a CDIF property carries either a controlled-vocabulary reference or an inline concept definition.",
-                        "anyOf": [
-                          {
-                            "type": "object",
-                            "required": [
-                              "@id"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                              "@id": {
-                                "type": "string",
-                                "description": "reference to a skos concept for the data type"
-                              }
-                            }
-                          },
-                          {
-                            "$ref": "#/$defs/DefinedTerm"
-                          },
-                          {
-                            "$ref": "#/$defs/Concept"
-                          }
-                        ]
+                        "$ref": "#/$defs/cdifConceptOrTermOrString"
                       }
                     ]
                   },
                   "dcterms:relation": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URI of the related resource -- the DCAT canonical pointer to what is being related to, which is distinct from schema:url, the presentation URL of the link itself."
+                    "description": "The related resource -- the DCAT canonical pointer to what is being related to, which is distinct from schema:url, the presentation URL of the link itself.\nAn @id reference is the RECOMMENDED form and a string is permitted, which is DCMI's own position: \"Recommended practice is to identify the related resource by means of a URI. If this is not possible or feasible, a string conforming to a formal identification system may be provided.\" DCMI declares no rdfs:range for this property, and of the 13 DCMI properties carrying an \"intended to be used with non-literal values\" restriction, this is deliberately not one. dcat.ttl does not re-declare or constrain it at all -- the only triple mentioning it in the whole DCAT vocabulary is `dcat:distribution rdfs:subPropertyOf dcterms:relation`.\nSo objectReference-only would be stricter than both DCAT and DCMI and would reject a form the specification sanctions. The anyOf matches how schema:additionalType is handled here: both forms valid, the object form used in examples and required only where a `contains` pins a specific value.\nIt was string-only until 2026-10-01, which rejected the @id form outright. Reported from outside by a PSDI validator taking a things-not-strings approach (profile-core#16): their DCAT catalogue mirrors the DCAT-3 spec examples and wrote {\"@id\": ...}, which failed both layers -- while CDIF's own documented URI serialization policy (agents.md) says URI values SHOULD be {\"@id\": ...}. The register required the one form its own policy argues against.",
+                    "anyOf": [
+                      {
+                        "title": "Object Reference",
+                        "description": "A reference to a node defined elsewhere, by its @id.",
+                        "type": "object",
+                        "properties": {
+                          "@id": {
+                            "type": "string",
+                            "description": "resolvable @id of the referenced node"
+                          }
+                        },
+                        "required": [
+                          "@id"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    ]
                   }
                 },
                 "required": [
-                  "@type",
-                  "schema:url"
+                  "@type"
+                ],
+                "allOf": [
+                  {
+                    "if": {
+                      "required": [
+                        "@type"
+                      ],
+                      "properties": {
+                        "@type": {
+                          "contains": {
+                            "const": "schema:CreativeWork"
+                          }
+                        }
+                      }
+                    },
+                    "then": {
+                      "required": [
+                        "schema:url"
+                      ]
+                    }
+                  }
                 ]
               }
             ]
@@ -277,7 +296,9 @@
         "type": "object",
         "properties": {
           "@type": {
-            "default": "schema:Place",
+            "default": [
+              "schema:Place"
+            ],
             "type": "array",
             "items": {
               "type": "string"
@@ -291,27 +312,7 @@
             "description": "Domain-specific type classifications for this place (e.g. facility type,laboratory classification, feature type).",
             "type": "array",
             "items": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/$defs/DefinedTerm"
-                },
-                {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "@id"
-                  ],
-                  "properties": {
-                    "@id": {
-                      "type": "string",
-                      "description": "reference to a term defined elsewhere"
-                    }
-                  }
-                }
-              ]
+              "$ref": "#/$defs/cdifConceptOrTermOrString"
             }
           },
           "schema:name": {
@@ -421,7 +422,9 @@
                 "description": "A point location. Point locations are recommended for data that is associated with specific sample locations, particularly if these are widely spaced such that an enclosing bounding box would be a misleading representation of the spatial location. Be aware that some client applications might only index or display bounding box extents or a single point location.",
                 "properties": {
                   "@type": {
-                    "default": "schema:GeoCoordinates",
+                    "default": [
+                      "schema:GeoCoordinates"
+                    ],
                     "type": "array",
                     "items": {
                       "type": "string"
@@ -453,7 +456,9 @@
                 "description": "A schema:GeoShape bounding box. The geometry is described with a set of latitude/longitude pairs (in that order).The documentation for schema:GeoShape states 'Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.'",
                 "properties": {
                   "@type": {
-                    "default": "schema:GeoShape",
+                    "default": [
+                      "schema:GeoShape"
+                    ],
                     "type": "array",
                     "items": {
                       "type": "string"
@@ -478,7 +483,9 @@
                 "description": "A schema:GeoShape curvilinear trace, for resource related to a linear trace like a ship track or airplane flight line",
                 "properties": {
                   "@type": {
-                    "default": "schema:GeoShape",
+                    "default": [
+                      "schema:GeoShape"
+                    ],
                     "type": "array",
                     "items": {
                       "type": "string"
@@ -544,7 +551,10 @@
                   }
                 }
               }
-            }
+            },
+            "required": [
+              "geosparql:asWKT"
+            ]
           }
         },
         "anyOf": [
@@ -582,7 +592,9 @@
             "description": "a w3c time proper interval with bounds that are named time ordinal eras with identifier, e.g. geologic age. This is a SOSO schema.org extension",
             "properties": {
               "@type": {
-                "default": "time:ProperInterval",
+                "default": [
+                  "time:ProperInterval"
+                ],
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -644,7 +656,9 @@
                 "description": "Must exactly match the specified @context object."
               },
               "@type": {
-                "default": "time:ProperInterval",
+                "default": [
+                  "time:ProperInterval"
+                ],
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -675,7 +689,9 @@
                     "type": "object",
                     "properties": {
                       "@type": {
-                        "default": "time:TimePosition",
+                        "default": [
+                          "time:TimePosition"
+                        ],
                         "type": "array",
                         "items": {
                           "type": "string"
@@ -719,7 +735,9 @@
                     "type": "object",
                     "properties": {
                       "@type": {
-                        "default": "time:TimePosition",
+                        "default": [
+                          "time:TimePosition"
+                        ],
                         "type": "array",
                         "items": {
                           "type": "string"
@@ -849,6 +867,39 @@
     }
   },
   "$defs": {
+    "cdifConceptOrTermOrString": {
+      "title": "CDIF Concept-or-Term-or-String",
+      "description": "Shared shape for a CDIF property that carries either a controlled-vocabulary value or a bare string label. Wraps cdifConceptOrTerm (SKOS-concept @id-ref, schema:DefinedTerm, or inline cdif:Concept) with a plain-string alternative used for legacy or single-word labels not yet bound to a vocabulary.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "description": "A SKOS concept identified by URI, a schema:DefinedTerm, or an inline cdif:Concept. Shared shape used wherever a CDIF property carries either a controlled-vocabulary reference or an inline concept definition.",
+          "anyOf": [
+            {
+              "type": "object",
+              "required": [
+                "@id"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "@id": {
+                  "type": "string",
+                  "description": "reference to a skos concept for the data type"
+                }
+              }
+            },
+            {
+              "$ref": "#/$defs/DefinedTerm"
+            },
+            {
+              "$ref": "#/$defs/Concept"
+            }
+          ]
+        }
+      ]
+    },
     "DefinedTerm": {
       "description": "schema.org Defined Term schema.\n\n**Union-type policy:** In CDIF profile UML models an attribute typed as\nschema:DefinedTerm is represented by a single attribute of that class type.\nThe JSON Schema implementation permits the property value to be EITHER a\nplain string (interpreted as schema:name or schema:termCode in the default\nvocabulary) OR a full schema:DefinedTerm object (with explicit @type, name,\nidentifier, termCode, inDefinedTermSet). Consumers should accept either form.\n\nNote that this differs from the cdif Concept policy: a Concept (skos:Concept)\nin CDIF profiles MUST be a controlled-vocabulary entry (object form or\n@id-reference) — plain strings are not permitted for Concept-typed values\nbecause vocabulary identity cannot be recovered from an unscoped label.\n",
       "type": "object",
