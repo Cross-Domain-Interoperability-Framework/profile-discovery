@@ -121,8 +121,22 @@ cdifd:CDIFRelationShape a sh:NodeShape ;
     sh:targetClass dcat:Relationship .
 
 cdifd:CDIFVariableMeasuredShape a sh:NodeShape ;
-    sh:property [ sh:message "a propertID must be a uri reference, a name string, or a schema:DefinedTerm" ;
+    sh:property [ sh:message "a variable should carry a schema:propertyID identifying the concept it measures." ;
             sh:minCount 1 ;
+            sh:path schema:propertyID ;
+            sh:severity sh:Warning ],
+        [ sh:datatype xsd:string ;
+            sh:message "a variableMeasured should have a text description explaining the variable" ;
+            sh:minCount 1 ;
+            sh:minLength 10 ;
+            sh:path schema:description ;
+            sh:severity sh:Info ],
+        [ sh:message "measurementTechnique describes how the variable values were determined" ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] [ sh:class schema:DefinedTerm ] ) ;
+            sh:path schema:measurementTechnique ;
+            sh:severity sh:Info ],
+        [ sh:message "a propertID must be a uri reference, a name string, or a schema:DefinedTerm" ;
             sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ;
                         sh:minLength 5 ] [ sh:class schema:DefinedTerm ;
                         sh:property [ sh:message "a defined term should have an identifier that is a resolvable URI" ;
@@ -139,17 +153,6 @@ cdifd:CDIFVariableMeasuredShape a sh:NodeShape ;
                                 sh:path schema:identifier ] ] ) ;
             sh:path schema:propertyID ;
             sh:severity sh:Warning ],
-        [ sh:datatype xsd:string ;
-            sh:message "a variableMeasured should have a text description explaining the variable" ;
-            sh:minCount 1 ;
-            sh:minLength 10 ;
-            sh:path schema:description ;
-            sh:severity sh:Info ],
-        [ sh:message "measurementTechnique describes how the variable values were determined" ;
-            sh:minCount 0 ;
-            sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] [ sh:class schema:DefinedTerm ] ) ;
-            sh:path schema:measurementTechnique ;
-            sh:severity sh:Info ],
         [ sh:datatype xsd:string ;
             sh:message "unitText identifies the unit of measurement as a string" ;
             sh:minCount 0 ;
