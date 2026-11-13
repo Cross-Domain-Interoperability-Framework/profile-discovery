@@ -6,18 +6,14 @@
     "prov": "http://www.w3.org/ns/prov#"
   },
   "@id": "https://example.org/dataset/minimal-discovery-001",
-  "@type": [
-    "schema:Dataset"
-  ],
+  "@type": ["schema:Dataset"],
   "schema:name": "Arctic Sea Ice Extent Monthly Averages",
   "schema:identifier": "https://doi.org/10.5281/zenodo.1234567",
   "schema:dateModified": "2025-06-15",
   "schema:url": "https://example.org/dataset/arctic-sea-ice-extent",
   "schema:license": [
     {
-      "@type": [
-        "schema:CreativeWork"
-      ],
+      "@type": ["schema:CreativeWork"],
       "schema:name": "Creative Commons Attribution 4.0",
       "schema:url": "https://creativecommons.org/licenses/by/4.0/"
     }
@@ -28,26 +24,23 @@
       "schema:name": "sea ice extent"
     }
   ],
+  "schema:distribution": [
+    {
+      "@type": ["schema:DataDownload"],
+      "schema:name": "CSV profiles export",
+      "schema:contentUrl": "https://example.org/data/nadw-ctd-2015-2024.csv"
+    }
+  ],
   "schema:subjectOf": {
     "@id": "https://example.org/metadata/minimal-discovery-001",
-    "@type": [
-      "schema:Dataset"
-    ],
+    "@type": ["schema:Dataset"],
     "schema:additionalType": [
-      {
-        "@id": "dcat:CatalogRecord"
-      }
+      {"@id": "dcat:CatalogRecord"}
     ],
-    "schema:about": {
-      "@id": "https://example.org/dataset/minimal-discovery-001"
-    },
+    "schema:about": {"@id": "https://example.org/dataset/minimal-discovery-001"},
     "dcterms:conformsTo": [
-      {
-        "@id": "https://w3id.org/cdif/core/1.1"
-      },
-      {
-        "@id": "https://w3id.org/cdif/discovery/1.1"
-      }
+      {"@id": "https://w3id.org/cdif/core/1.1"},
+      {"@id": "https://w3id.org/cdif/discovery/1.1"}
     ]
   }
 }
