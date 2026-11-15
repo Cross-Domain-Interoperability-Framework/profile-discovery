@@ -11,8 +11,8 @@
 
 cdifd:CDIFDiscoveryConformsToShape a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:hasValue <https://w3id.org/cdif/discovery/1.1> ;
-            sh:message "A catalog record on a dataset using CDIF discovery properties should include dcterms:conformsTo <https://w3id.org/cdif/discovery/1.1>." ;
+            sh:hasValue <https://w3id.org/cdif/discovery/2.0> ;
+            sh:message "A catalog record on a dataset using CDIF discovery properties should include dcterms:conformsTo <https://w3id.org/cdif/discovery/2.0>." ;
             sh:minCount 1 ;
             sh:path dcterms:conformsTo ;
             sh:severity sh:Warning ] ;

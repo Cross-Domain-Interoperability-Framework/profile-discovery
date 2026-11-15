@@ -34,7 +34,7 @@ A resource conforms to the CDIF Discovery profile when its catalog record declar
 "schema:subjectOf": {
   "@type": ["schema:CreativeWork", "dcat:CatalogRecord"],
   "dcterms:conformsTo": [
-    "https://w3id.org/cdif/discovery/1.1"
+    "https://w3id.org/cdif/discovery/2.0"
   ]
 }
 ```
